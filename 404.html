@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Page Not Found</title>
+    <style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Arial', sans-serif;
+		background-color: #0d0d0d;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.container {
+		text-align: center;
+		position: relative;
+		z-index: 10;
+	}
+
+	.error-content h1 {
+		font-size: 8rem;
+		letter-spacing: 10px;
+		color: #ff0050;
+		text-shadow: 2px 2px 0 rgba(255, 0, 80, 0.7);
+	}
+
+	.error-content p {
+		font-size: 1.5rem;
+		margin-bottom: 20px;
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.home-btn {
+		padding: 10px 20px;
+		background-color: #ff0050;
+		color: #fff;
+		border: none;
+		border-radius: 5px;
+		text-decoration: none;
+		font-size: 1.2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.home-btn:hover {
+		background-color: #ff3366;
+	}
+
+	.glitch {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 150%;
+		height: 150%;
+		background: repeating-linear-gradient(
+			45deg,
+			rgba(255, 255, 255, 0.1),
+			rgba(255, 255, 255, 0.1) 10px,
+			rgba(0, 0, 0, 0.1) 10px,
+			rgba(0, 0, 0, 0.1) 20px
+		);
+		animation: glitch-animation 3s infinite;
+		transform: translate(-50%, -50%) rotate(30deg);
+		z-index: 1;
+		opacity: 0.05;
+	}
+
+	@keyframes glitch-animation {
+		0% {
+			transform: translate(-50%, -50%) rotate(30deg);
+		}
+		50% {
+			transform: translate(-50%, -50%) rotate(31deg);
+		}
+		100% {
+			transform: translate(-50%, -50%) rotate(30deg);
+		}
+	}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-content">
+            <h1>404</h1>
+            <p>Oops! The page you're looking for doesn't exist.</p>
+            <a href="/" class="home-btn">Go Home</a>
+        </div>
+    </div>
+    <script>
+	const glitch = document.getElementById('glitch');
+	setInterval(() => {
+		glitch.style.opacity = Math.random() * 0.1 + 0.05;
+	}, 100);
+	</script>
+</body>
+</html>
