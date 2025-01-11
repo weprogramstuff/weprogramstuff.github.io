@@ -3,251 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeProgramStuff Hackathon - Virtual Hackathon for High-Schoolers</title>
-    <meta content="WeProgramStuff Hackathon - Virtual Hackathon for High-Schoolers" property="og:title" />
-    <meta name="author" content="Code the Stars">
-    <meta name="application-name" content="WeProgramStuff Hackathon">
-    <meta name="description" content="WeProgramStuff Hackathon is a hackathon tailored for all ages however mainly directed towards high schoolers to showcase their coding skills and creative ideas. Join for free and compete for prizes!">
-    <meta content="WeProgramStuff Hackathon is a hackathon tailored for all ages however mainly directed towards high schoolers to showcase their coding skills and creative ideas. Join for free and compete for prizes!" property="og:description" />
-    <meta content="./assets/static/Illuminate.svg" property="og:image" />
-    <meta content="#010418" data-react-helmet="true" name="theme-color" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/defaults.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/scroll.js" defer></script>
-    <script src="assets/js/accordian.js" defer></script>
-    <script src="assets/js/menu.js" defer></script>
+    <title>Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #4a90e2, #50e3c2);
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
 </head>
-<body><div class="overflow-x-hidden">
-    <header>
-        <nav class="w-screen flex justify-between px-2 sm:px-8 py-2 items-center fixed backdrop-blur-sm z-10">
-            <a onclick="sscroll('#hero')" class="flex items-center gap-2">
-                <h1 class="poetsen select-none">WeProgramStuff Hackathon</h1>
-            </a>
-            <div class="flex flex-col sm:hidden">
-                <button class="menu">
-                    <img width="25" src="assets/static/menu.svg" alt="">
-                </button>
-                <ul onclick="this.style.display = 'none'" class="menu-list absolute bg-[#060A2C] rounded text-center">
-                    <li class="m-1 mt-2"><a onclick="sscroll('#hero')">Home</a></li>
-                    <li class="m-1"><a onclick="sscroll('#about')">About</a></li>
-                    <li class="m-1"><a onclick="sscroll('#schedule')">Schedule</a></li>
-                    <li class="m-1"><a class="bg-gradient-to-r from-blue-600 via-pink-500 to-indigo-400 inline-block text-transparent bg-clip-text" onclick="sscroll('#sponsors')">Sponsors</a></li>
-                    <li class="m-1"><a onclick="sscroll('#fun')">Challenge</a></li>
-                    <li class="m-1"><a onclick="sscroll('#faq')">FAQ</a></li>
-                    <li class="m-1 mb-2"><a onclick="sscroll('#contact')">Contact</a></li>
-                </ul>
-            </div>
-            <ul class="hidden sm:flex gap-2 items-center rounded"> 
-                <li><a onclick="sscroll('#hero')">Home</a></li>
-                <li><a onclick="sscroll('#about')">About</a></li>
-                <li><a class="bg-gradient-to-r from-blue-600 via-pink-500 to-indigo-400 inline-block text-transparent bg-clip-text" onclick="sscroll('#sponsors')">Sponsors</a></li>
-                <li><a onclick="sscroll('#schedule')">Schedule</a></li>
-                <li><a class="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text" href="https://weprogramstuff.fillout.com/t/uucycLn3o5us" target="_blank">Register</a></li>
-                <li><a onclick="sscroll('#fun')">Challenge</a></li>
-                <li><a onclick="sscroll('#faq')">FAQ</a></li>
-                <li><a onclick="sscroll('#contact')">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="flex justify-center items-center wrap">
-            <img width="750" src="assets/static/WeProgramStuff Hackathon.svg" alt="" class="drop-shadow-xl brightness-50 absolute z-0 -translate-y-5 translate-x-1">
-            <div class="flex flex-col gap-5 justify-center items-center">
-                <h1 class="poetsen text-5xl sm:text-7xl">WeProgramStuff Hackathon</h1>
-                <p class="text-md sm:text-lg text-center max-w-[500px]">A virtual hackathon designed for all ages to showcase their coding skills and creativity</p>
-                <div class="flex gap-2">
-                    <a href="https://weprogramstuff.fillout.com/t/uucycLn3o5us" target="_blank" class="flex justify-center items-center w-24 h-10 bg-black rounded-xl transition-all hover:-translate-y-1"><span class="font-bold bg-gradient-to-r from-blue-600 to-indigo-400 inline-block text-transparent bg-clip-text">Join Now</span></a>
-                    <a onclick="sscroll('#about')" class="flex justify-center items-center w-24 h-10 bg-[rgba(0,0,0,0.3)] border-2 border-black rounded-xl transition-all hover:-translate-y-1">More Info</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="flex flex-col justify-center items-center sm:p-32 gap-[70px] wrap h-auto">
-            <p class="max-w-[950px] sm:leading-loose sm:text-center sm:text-xl p-8 sm:p-0">WeProgramStuff Hackathon is a hackathon tailored for all ages however mainly directed towards high schoolers to showcase their coding skills and creative ideas. Hosted by Code the Stars, get ready for a weekend packed with engaging coding tasks, informative workshops and great opportunities to network. Come be a part of an event where you can express your imagination and interact with students, from various parts of the world.</p>
-            <div class="flex flex-col sm:flex-row wrap p-5 gap-6">
-                <div class="sm:max-w-sm rounded-lg shadow bg-[#060A2C] transition-all sm:hover:-translate-y-5">
-                    <img class="rounded-t-lg w-[920px] h-[200px] sm:h-[260px]" src="assets/static/coding-in-the-classroom.png" alt="" />
-                    <div class="sm:p-5 px-2 py-1">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white text-center">Coding Challenges</h5>
-                        <div class="w-auto mb-4 h-[2px] bg-slate-300 rounded"></div>
-                        <p class="mb-3 font-normal text-lg text-gray-400 text-center">Throughout this hackathon, you're invited to participate in a few coding challenges which are to be announced throughout the event.</p>
-                    </div>
-                </div>
-
-                <div class="max-w-sm rounded-lg shadow bg-[#060A2C] transition-all sm:hover:-translate-y-5">
-                    <img class="rounded-t-lg w-[920px] h-[200px] sm:h-[260px]" src="assets/static/workshop.png" alt="" />
-                    <div class="sm:p-5 px-2 py-1">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white text-center">Speaker Workshops</h5>
-                        <div class="w-auto mb-4 h-[2px] bg-slate-300 rounded"></div>
-                        <p class="mb-3 font-normal text-lg text-gray-400 text-center">Join us during our special workshops where guest speakers will guide participants through fun and educational activities</p>
-                    </div>
-                </div>
-
-                <div class="max-w-sm rounded-lg shadow bg-[#060A2C] transition-all sm:hover:-translate-y-5">
-                    <img class="rounded-t-lg w-[920px] h-[200px] sm:h-[260px]" src="assets/static/network.png" alt="" />
-                    <div class="sm:p-5 px-2 py-1">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white text-center">Networking Opportunities</h5>
-                        <div class="w-auto mb-4 h-[2px] bg-slate-300 rounded"></div>
-                        <p class="mb-3 font-normal text-lg text-gray-400 text-center">Anyone who joins will be able to network themselves via our <a href="https://discord.gg/eRS3WmkPbv">Discord Group</a> and meet new people throughout our event</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="sponsors" class="flex flex-col justify-center items-center sm:p-32 gap-6 wrap h-auto">
-            <h2 class="text-3xl sm:text-5xl font-bold">Sponsors</h2>
-            <p class="text-center max-w-[800px] sm:text-lg text-gray-300">
-                A big thank you to our sponsors for supporting the WeProgramStuff Hackathon. Their contributions help make this event possible!
-            </p>
-            <div class="flex flex-wrap justify-center items-center gap-8 p-5">
-                <div class="w-40 h-20 flex justify-center items-center rounded-lg">
-                    <a href="https://www.facebook.com/FIRST.Team.4041/" target="_blank">
-                        <img src="https://i.ibb.co/z6q8mK0/435977007-842875864546623-8255484940660569543-n.jpg" alt="FRC Team 4041" class="w-full h-full object-contain">
-                    </a>
-                </div>
-                <div class="w-40 h-20 flex justify-center items-center rounded-lg">
-                    <a href="https://github.com/BlaizerBrumo/SafeGuard" target="_blank">
-                        <img src="https://i.ibb.co/420YbVf/sddefault.jpg" alt="SafeGuard Anticheat" class="w-full h-full object-contain">
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section id="schedule" class="relative h-auto overflow-hidden py-16 px-4">
-            <div class="relative z-10 max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Schedule</h2>
-                    <p class="text-lg text-gray-600">November 24, 2024</p>
-                </div>
-        
-                <div class="space-y-6">
-                    <div class="flex flex-col gap-8">
-                        <div class="relative pl-8 border-l-4 border-yellow-500">
-                            <div class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-[10px] top-1"></div>
-                            <div class="space-y-6">
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">6:30 AM</time>
-                                    <p class="mt-1">Hosts and speakers join</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">7:00 AM</time>
-                                    <p class="mt-1">Themes, rules, judging criteria, prizes, and sponsors are announced</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">9:00 AM</time>
-                                    <p class="mt-1">Hacking begins using GitLab, VS Code Live Share, Docker, and other tools by teams choice</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">11:30 AM</time>
-                                    <p class="mt-1">Virtual brunch with Discord networking and fun activities like Kahoot</p>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="relative pl-8 border-l-4 border-yellow-500">
-                            <div class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-[10px] top-1"></div>
-                            <div class="space-y-6">
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">12:00 PM</time>
-                                    <p class="mt-1">Hacking continues with mentor check-ins and task tracking via Jira/Asana</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">1:00 PM</time>
-                                    <p class="mt-1">Guest speaker event with prize announcements</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">2:00 PM</time>
-                                    <p class="mt-1">Mid-hack progress sharing on Discord, with optional feedback sessions</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">2:30 PM</time>
-                                    <p class="mt-1">Final coding sprint for testing, documentation (Notion or other), and design (Figma or other)</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">4:00 PM</time>
-                                    <p class="mt-1">Code freeze and submission deadline via a custom submission platform</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">4:30 PM</time>
-                                    <p class="mt-1">Live or recorded project demos on discord with real-time feedback</p>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="relative pl-8 border-l-4 border-yellow-500">
-                            <div class="absolute w-4 h-4 bg-yellow-500 rounded-full -left-[10px] top-1"></div>
-                            <div class="space-y-6">
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">6:00 PM</time>
-                                    <p class="mt-1">Virtual dinner break with Discord networking and fun activities</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">6:30 PM</time>
-                                    <p class="mt-1">Closing ceremony on Discord with winner announcements, feedback, and digital badges</p>
-                                </div>
-                                <div class="group">
-                                    <time class="text-lg font-bold text-yellow-500">7:00 PM</time>
-                                    <p class="mt-1">Networking after-party on Discord with games, playlists, and collaboration opportunities</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faq" class="flex flex-col gap-8 justify-center items-center h-auto">
-            <p class="font-bold text-3xl sm:text-5xl">FAQ</p>
-            <div class="flex flex-col w-[700px] justify-center items-center">
-                <button class="accordion rounded-t-3xl sm:text-xl border-b-2 border-b-[#010418]">Does this cost money?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">Nope! This is a completely free event where you can learn, code, meet new people, and compete for prizes.</p>
-                </div>
-    
-                <button class="accordion sm:text-xl border-b-2 border-b-[#010418]">Hackathon?? Will I be doing illegal hacking?!</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">Nope! The term "hacking" in this case means creating a project with code, hence the term "hackathon".</p>
-                </div>
-    
-                <button class="accordion sm:text-xl border-b-2 border-b-[#010418]">How do I join?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">Simply follow <a href="https://weprogramstuff.fillout.com/t/uucycLn3o5us" target="_blank" class="underline text-sm sm:text-base">THIS</a> link and fill out the form. Then you should recieve an email confirming your registration!</p>
-                </div>
-
-                <button class="accordion sm:text-xl border-b-2 border-b-[#010418]">Is there a Discord server?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">Yes! If you haven't already, register <a href="https://weprogramstuff.fillout.com/t/uucycLn3o5us" target="_blank" class="underline text-sm sm:text-base">HERE</a> and you'll receive an email with the Discord server link. This is where the entire hackathon will be hosted.</p>
-                </div>
-
-                <button class="accordion sm:text-xl border-b-2 border-b-[#010418]">How can I contact whoever runs this event?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">This event is run by <a href="https://discord.gg/eRS3WmkPbv" target="_blank" class="underline text-sm sm:text-base">The WeProgramStuff Team</a>, and if you have any questions or need further information, feel free to reach out to us at this email: <a href="mailto:cassidy@cassidycamp.work" target="_blank" class="underline">cassidy@cassidycamp.work</a></p>
-                </div>
-
-                <button class="accordion sm:text-xl border-b-2 border-b-[#010418]">Will there be prizes?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418]">
-                    <p class="p-4 text-sm sm:text-base">Yes! As of right now, we're still waiting for a response from some potential sponsors, but there will likely be digital awards for the winners. More details and updates will be in the Discord server</p>
-                </div>
-
-                <button class="accordion sm:text-xl">Where is this event run?</button>
-                <div class="panel border-t-2 border-t-[#010418] border-b-2 border-b-[#010418] rounded-b-3xl sm:w-full">
-                    <p class="p-4 text-sm sm:text-base">The event will be run in the Discord group</p>
-                </div>
-            </div>
-        </section>
-        
-    </main>
-
-    <footer class="sm:p-8 px-3 py-5 bg-black flex sm:flex-row flex-col gap-7 sm:gap-0 sm:justify-between sm:items-center mt-24">
-        <div class="flex flex-col gap-1 w-[300px] text-sm sm:text-base">
-            <p>Contact: <a class="underline" href="mailto:cassidy@cassidycamp.work" target="_blank" id="email">cassidy@cassidycamp.work</a></p>
-            <p>Join this Hackathon: <a class="underline" href="https://weprogramstuff.fillout.com/t/uucycLn3o5us" target="_blank">Register</a></p>
-        </div>
-        <p class="text-sm sm:text-base">&copy; 2024 WeProgramStuff.<p>
-        <p class="w-[300px] text-sm sm:text-base">Website edited with ❤️ by <a class="underline bg-gradient-to-r from-green-400 to-green-700 inline-block text-transparent bg-clip-text" href="https://cassidycamp.work" target="_blank">Cassidy Camp</a> Originally made by Code-the-Stars under the MIT License for the illuminate hackathon</p>
-    </footer>
-    <div id="contact"></div>
-</div></body>
+<body>
+    <div class="container">
+        <h1>Coming Soon</h1>
+        <p>We're working hard to bring you something amazing. Stay tuned!</p>
+        <div class="spinner"></div>
+        <footer>&copy; 2025 WeProgramStuff</footer>
+    </div>
+</body>
 </html>
