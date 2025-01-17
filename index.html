@@ -5,60 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Markdown Note</title>
     <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #2b2b2b;
-            color: #f8f8f2;
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            background: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-        }
-        .header {
-            background: #007acc;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .output {
             padding: 20px;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: #1c1c1c;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(45deg, #007acc, #1e88e5);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #003366;
+        }
+
+        /* Output Styles */
+        .output {
+            padding: 30px;
             background: #1e1e1e;
             color: #f8f8f2;
             overflow-y: auto;
-            max-height: 300px;
-            font-size: 1em;
-            line-height: 1.5;
+            max-height: 500px;
+            font-size: 1.1em;
+            line-height: 1.7;
+            border-top: 2px solid #333;
+            transition: background-color 0.2s ease-in-out;
         }
+
+        .output:hover {
+            background-color: #2a2a2a;
+        }
+
+        /* Code block styling */
         pre {
-            background: #3e3e3e;
-            padding: 10px;
-            border-radius: 5px;
+            background: #2e2e2e;
+            padding: 15px;
+            border-radius: 8px;
             overflow-x: auto;
+            margin: 10px 0;
         }
+
         code {
-            background: #272822;
-            color: #a6e22e;
-            padding: 2px 4px;
-            border-radius: 4px;
+            background: #3e3e3e;
+            color: #f4f4f4;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 1em;
         }
+
+        /* Link Styling */
         a {
             color: #66d9ef;
             text-decoration: none;
+            transition: color 0.2s ease-in-out;
         }
+
         a:hover {
+            color: #ff79c6;
             text-decoration: underline;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .header {
+                font-size: 1.5em;
+            }
+
+            .output {
+                font-size: 1em;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -72,6 +136,7 @@
         const output = document.getElementById('markdown-output');
 
         const markdownText = `# Service Disruption Notification\n\nDear v3rm.net Administrators,\n\nWe regret to inform you that your site has been affected by an unforeseen disruption. This may be related to vulnerabilities in your current system infrastructure, which have been leveraged to cause temporary instability.\n\nIf you wish to restore normal service and ensure the future security of your operations, we recommend taking prompt action. To discuss the resolution of this situation and avoid further complications, please reach out via the encrypted communication channel provided below.\n\nContact: https://matrix.to/#/#4f4e6af4-fbc8-44b0-a024-8ce92ed6964e:unredacted.org\nFurther instructions will be given upon verified communication.\n\nTime is of the essence.\n\nBest,\nPaxTechnologica`;
+
         function renderMarkdown(markdownText) {
             return markdownText
                 .replace(/^### (.+)/gm, '<h3>$1</h3>')
@@ -80,7 +145,7 @@
                 .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
                 .replace(/\*(.+?)\*/g, '<em>$1</em>')
                 .replace(/`([^`]+)`/g, '<code>$1</code>')
-                .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>')
+                .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
                 .replace(/^\- (.+)/gm, '<ul><li>$1</li></ul>')
                 .replace(/\n/g, '<br>');
         }
