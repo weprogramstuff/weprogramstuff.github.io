@@ -3,70 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Dynamic Markdown Note</title>
     <style>
-        * {
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b2b2b;
+            color: #f8f8f2;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #4a90e2, #50e3c2);
-            font-family: Arial, sans-serif;
-            color: #fff;
+            height: 100vh;
         }
-
         .container {
+            width: 80%;
+            max-width: 800px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: #007acc;
+            color: white;
+            padding: 15px;
             text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
         }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .output {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #f8f8f2;
+            overflow-y: auto;
+            max-height: 300px;
+            font-size: 1em;
+            line-height: 1.5;
         }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+        pre {
+            background: #3e3e3e;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-top: 5px solid #fff;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 1rem auto;
+        code {
+            background: #272822;
+            color: #a6e22e;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+        a {
+            color: #66d9ef;
+            text-decoration: none;
         }
-
-        footer {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            opacity: 0.7;
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Coming Soon</h1>
-        <p>We're working hard to bring you something amazing. Stay tuned!</p>
-        <div class="spinner"></div>
-        <footer>&copy; 2025 WeProgramStuff</footer>
+        <div class="header">Dynamic Markdown Note</div>
+        <div id="markdown-output" class="output"></div>
     </div>
+
+    <script>
+        const output = document.getElementById('markdown-output');
+
+        const markdownText = `# Service Disruption Notification\n\nDear v3rm.net Administrators,\n\nWe regret to inform you that your site has been affected by an unforeseen disruption. This may be related to vulnerabilities in your current system infrastructure, which have been leveraged to cause temporary instability.\n\nIf you wish to restore normal service and ensure the future security of your operations, we recommend taking prompt action. To discuss the resolution of this situation and avoid further complications, please reach out via the encrypted communication channel provided below.\n\nContact: https://matrix.to/#/#4f4e6af4-fbc8-44b0-a024-8ce92ed6964e:unredacted.org\nFurther instructions will be given upon verified communication.\n\nTime is of the essence.\n\nBest,\nPaxTechnologica`;
+        function renderMarkdown(markdownText) {
+            return markdownText
+                .replace(/^### (.+)/gm, '<h3>$1</h3>')
+                .replace(/^## (.+)/gm, '<h2>$1</h2>')
+                .replace(/^# (.+)/gm, '<h1>$1</h1>')
+                .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.+?)\*/g, '<em>$1</em>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>')
+                .replace(/^\- (.+)/gm, '<ul><li>$1</li></ul>')
+                .replace(/\n/g, '<br>');
+        }
+
+        output.innerHTML = renderMarkdown(markdownText);
+    </script>
 </body>
 </html>
